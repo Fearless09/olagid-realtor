@@ -1,9 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Navbar from "@/components/shared/Navbar";
-import Footer from "@/components/shared/Footer";
-import InspectionModal from "@/components/modals/InspectionModal";
 import { COMPANY_DETAILS } from "@/data/properties";
 import {
   FiMapPin,
@@ -15,9 +12,9 @@ import {
   FiUser,
 } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
+import { notFound } from "next/navigation";
 
 export default function ContactPage() {
-  const [inspectionModalOpen, setInspectionModalOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
@@ -38,10 +35,10 @@ export default function ContactPage() {
       `• Message: ${message}`,
   )}`;
 
+  notFound();
+
   return (
     <div className="flex min-h-screen flex-col bg-[#fcfdfd]">
-      <Navbar onOpenInspectionModal={() => setInspectionModalOpen(true)} />
-
       <main className="flex-1">
         {/* Hero */}
         <section className="bg-gradient-to-r from-[#022c22] via-[#064e3b] to-[#047857] px-4 py-14 text-white sm:px-6 lg:px-8">
@@ -307,13 +304,6 @@ export default function ContactPage() {
           </div>
         </section>
       </main>
-
-      <Footer />
-
-      <InspectionModal
-        isOpen={inspectionModalOpen}
-        onClose={() => setInspectionModalOpen(false)}
-      />
     </div>
   );
 }

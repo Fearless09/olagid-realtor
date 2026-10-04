@@ -85,11 +85,11 @@ export default function DiasporaConcierge() {
 
         {/* Action Banner */}
         <main className="mt-14 flex flex-col items-center justify-between gap-6 rounded-3xl border border-amber-500/30 bg-linear-to-r from-emerald-900/90 to-[#022c22] px-4 py-15">
-          <div className="space-y-2 text-center lg:text-left">
+          <div className="space-y-2 text-center">
             <h4 className="text-xl font-bold text-white sm:text-2xl">
               Ready to verify a land plot or start your dream home build?
             </h4>
-            <p className="max-w-xl text-xs text-emerald-200/80 sm:text-sm">
+            <p className="mx-auto max-w-xl text-xs text-emerald-200/80 sm:text-sm">
               Book a live 1-on-1 virtual consultation with our lead surveyor and
               project engineer at your convenience.
             </p>

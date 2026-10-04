@@ -22,7 +22,7 @@ const SelectGroup: SelectGroupProps = ({
       <label
         htmlFor={props.id}
         className={cn(
-          "mb-1.5 flex items-center gap-1 text-[11px] font-bold tracking-wider text-slate-500 uppercase",
+          "mb-1.5 flex items-center gap-1 text-xs font-bold tracking-wider text-slate-500 uppercase",
           { "mb-1 text-[10px]": size == "sm" },
         )}
       >

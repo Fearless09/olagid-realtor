@@ -1,31 +1,26 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import Navbar from "@/components/shared/Navbar";
-import Footer from "@/components/shared/Footer";
-import InspectionModal from "@/components/modals/InspectionModal";
 import { COMPANY_DETAILS } from "@/data/properties";
 import {
   FiShield,
   FiTarget,
   FiAward,
-  FiCheckCircle,
   FiUsers,
   FiMapPin,
   FiArrowRight,
-  FiPhone,
 } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
+import { notFound } from "next/navigation";
 
 export default function AboutPage() {
   const [inspectionModalOpen, setInspectionModalOpen] = useState(false);
 
+  notFound();
+
   return (
     <div className="flex min-h-screen flex-col bg-[#fcfdfd]">
-      <Navbar onOpenInspectionModal={() => setInspectionModalOpen(true)} />
-
       <main className="flex-1">
         {/* Hero */}
         <section className="bg-gradient-to-r from-[#022c22] via-[#064e3b] to-[#047857] px-4 py-16 text-white sm:px-6 lg:px-8 lg:py-24">
@@ -191,13 +186,6 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
-
-      <Footer />
-
-      <InspectionModal
-        isOpen={inspectionModalOpen}
-        onClose={() => setInspectionModalOpen(false)}
-      />
     </div>
   );
 }
